@@ -33,7 +33,7 @@ A Rádio das POCs é uma página que reproduz um streaming de rádio online e pe
 
 3. Crie um arquivo `.env.local` com a URL do seu streaming:
    ```env
-   STREAM_URL=https://listen.radioking.com/radio/734252/stream/800552
+   NEXT_PUBLIC_STREAM_URL=https://listen.radioking.com/radio/734252/stream/800552
    ```
 
 4. Rode o projeto:
@@ -51,14 +51,14 @@ A Rádio das POCs é uma página que reproduz um streaming de rádio online e pe
 A URL do stream é configurada via variável de ambiente:
 
 ```env
-STREAM_URL=https://listen.radioking.com/radio/734252/stream/800552
+NEXT_PUBLIC_STREAM_URL=https://listen.radioking.com/radio/734252/stream/800552
 ```
 
 E usada no código da seguinte forma:
 
 ```tsx
 <audio ref={audioRef} loop>
-  <source src={process.env.STREAM_URL} type="audio/mpeg" />
+  <source src={process.env.NEXT_PUBLIC_STREAM_URL} type="audio/mpeg" />
 </audio>
 ```
 
