@@ -117,7 +117,7 @@ export default function Home() {
   
     <main className="relative z-10 flex-grow flex flex-col items-center justify-center text-white text-center px-4">
       <h1 className="text-5xl font-extrabold drop-shadow-md mb-4">
-        Bem-vindo à Rádio das POC 🎙️
+        Bem-vindo à Rádio das POCS 🎙️
       </h1>
       <h2 className="text-xl max-w-xl drop-shadow-sm mb-6">
         Alô, alô, mona! Você sintonizou na Rádio das Pocs — onde o glitter é frequente e o deboche é lei.
