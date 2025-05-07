@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     const savedPlayState = localStorage.getItem("isPaused");
-    if (savedPlayState === "false" && audioRef.current) {
+    if (savedPlayState === "true" && audioRef.current) {
       audioRef.current.volume = volume;
       audioRef.current.play().then(() => {
         setIsPaused(false);
