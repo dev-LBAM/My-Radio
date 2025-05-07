@@ -123,11 +123,11 @@ export default function Home() {
       </div>
     </div>
   
-    <main className="relative z-10 flex-grow flex flex-col items-center justify-center text-white text-center px-4">
-      <h1 className="text-5xl font-extrabold drop-shadow-md mb-4">
+    <main className="relative z-10 flex-grow flex flex-col items-center justify-center text-white text-center px-4 mt-10">
+      <h1 className="text-5xl font-extrabold drop-shadow-md">
         Bem-vindo à Rádio das POCS 🎙️
       </h1>
-      <h2 className="text-xl max-w-xl drop-shadow-sm mb-6">
+      <h2 className="text-xl max-w-xl drop-shadow-sm">
         Alô, alô, mona! Você sintonizou na Rádio das Pocs — onde o glitter é frequente e o deboche é lei.
       </h2>
     </main>
