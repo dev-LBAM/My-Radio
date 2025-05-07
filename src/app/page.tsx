@@ -91,7 +91,7 @@ export default function Home() {
     {/* Player fixo */}
     <div className="fixed top-20 mt-5 left-1/2 transform -translate-x-1/2 w-[90%] sm:w-[60%] backdrop-blur-lg bg-white/10 border border-white/20 p-4 rounded-2xl flex items-center justify-between gap-4 shadow-2xl z-[10000] transition-all duration-300">
       <audio ref={audioRef} loop>
-        <source src="https://listen.radioking.com/radio/734252/stream/800552" type="audio/mpeg" />
+        <source src={process.env.STREAM_URL} type="audio/mpeg" />
         Seu navegador não suporta o elemento áudio.
       </audio>
   
