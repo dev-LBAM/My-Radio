@@ -23,18 +23,26 @@ export default function Home() {
   }, []); // apenas ao carregar
   
   const toggleAudio = () => {
-    if (audioRef.current) {
-      if (audioRef.current.paused) {
-        audioRef.current.play();
+    if (!audioRef.current) return;
+  
+    if (audioRef.current.paused) {
+      // 🔄 Força recarregamento do stream para voltar ao momento atual da rádio
+      audioRef.current.src = "";
+      audioRef.current.load();
+      audioRef.current.src = "https://listen.radioking.com/radio/734252/stream/800552";
+      audioRef.current.play().then(() => {
         setIsPaused(false);
         localStorage.setItem("isPaused", "true");
-      } else {
-        audioRef.current.pause();
-        setIsPaused(true);
-        localStorage.setItem("isPaused", "false");
-      }
+      }).catch(err => {
+        console.warn("Erro ao tentar dar play:", err);
+      });
+    } else {
+      audioRef.current.pause();
+      setIsPaused(true);
+      localStorage.setItem("isPaused", "false");
     }
   };
+  
   
 
   // Função para ajustar o volume
