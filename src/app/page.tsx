@@ -10,30 +10,32 @@ export default function Home() {
   const [volume, setVolume] = useState(1); // Estado para o volume
 
   useEffect(() => {
-    const tryPlay = () => {
-      if (audioRef.current) {
-        audioRef.current.volume = volume;
-        if (!audioRef.current.paused) {
-          audioRef.current.play().catch((err) => {
-            console.warn("Autoplay falhou. Navegador pode ter bloqueado:", err);
-          });
-        }
-      }
-    };
-    tryPlay();
-  }, [volume]);
-
+    const savedPlayState = localStorage.getItem("isPaused");
+    if (savedPlayState === "false" && audioRef.current) {
+      audioRef.current.volume = volume;
+      audioRef.current.play().then(() => {
+        setIsPaused(false);
+      }).catch(err => {
+        console.warn("Autoplay bloqueado:", err);
+        setIsPaused(true);
+      });
+    }
+  }, []); // apenas ao carregar
+  
   const toggleAudio = () => {
     if (audioRef.current) {
       if (audioRef.current.paused) {
         audioRef.current.play();
-        setIsPaused(false); // Mudar para 'false' quando tocar
+        setIsPaused(false);
+        localStorage.setItem("isPaused", "false");
       } else {
         audioRef.current.pause();
-        setIsPaused(true); // Mudar para 'true' quando pausar
+        setIsPaused(true);
+        localStorage.setItem("isPaused", "true");
       }
     }
   };
+  
 
   // Função para ajustar o volume
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,7 +105,7 @@ export default function Home() {
         <button className="p-2">{volumeIcon}</button>
         <input
           type="range"
-          className="w-24 h-2 bg-white/30 rounded-lg appearance-none cursor-pointer accent-yellow-400"
+          className="w-24 h-2 bg-white/30 rounded-lg appearance-none cursor-pointer accent-pink-500"
           onChange={handleVolumeChange}
           value={volume}
           min="0"
