@@ -23,7 +23,7 @@ A Rádio das POCs é uma página que reproduz um streaming de rádio online e pe
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seuusuario/radio-das-poc.git
+   git clone https://github.com/dev-LBAM/radio-das-poc.git
    ```
 
 2. Instale as dependências:
@@ -33,7 +33,7 @@ A Rádio das POCs é uma página que reproduz um streaming de rádio online e pe
 
 3. Crie um arquivo `.env.local` com a URL do seu streaming:
    ```env
-   NEXT_PUBLIC_STREAM_URL=https://listen.radioking.com/radio/734252/stream/800552
+   NEXT_PUBLIC_STREAM_URL=https://listen.radioking.com/radio/example/stream/example
    ```
 
 4. Rode o projeto:
@@ -51,7 +51,7 @@ A Rádio das POCs é uma página que reproduz um streaming de rádio online e pe
 A URL do stream é configurada via variável de ambiente:
 
 ```env
-NEXT_PUBLIC_STREAM_URL=https://listen.radioking.com/radio/734252/stream/800552
+NEXT_PUBLIC_STREAM_URL=https://listen.radioking.com/radio/example/stream/example
 ```
 
 E usada no código da seguinte forma:
