@@ -97,7 +97,7 @@ export default function Home() {
   
       {/* Botão Play/Pause */}
       <button
-        className="p-3 bg-white/20 rounded-full hover:bg-white/30 transition-colors duration-200"
+        className="p-3 bg-white/20 rounded-full hover:bg-white/30 transition-colors duration-200 cursor-pointer"
         onClick={toggleAudio}
       >
         {isPaused ? <Play className="w-6 h-6" /> : <Pause className="w-6 h-6" />}
