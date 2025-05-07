@@ -23,7 +23,7 @@ A Rádio das POCs é uma página que reproduz um streaming de rádio online e pe
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/dev-LBAM/radio-das-poc.git
+   git clone https://github.com/dev-LBAM/My-Radio.git
    ```
 
 2. Instale as dependências:
