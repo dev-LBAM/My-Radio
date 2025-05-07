@@ -27,11 +27,11 @@ export default function Home() {
       if (audioRef.current.paused) {
         audioRef.current.play();
         setIsPaused(false);
-        localStorage.setItem("isPaused", "false");
+        localStorage.setItem("isPaused", "true");
       } else {
         audioRef.current.pause();
         setIsPaused(true);
-        localStorage.setItem("isPaused", "true");
+        localStorage.setItem("isPaused", "false");
       }
     }
   };
